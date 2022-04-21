@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "interndetail.dart";
 import 'dart:math' as math;
 class InternScreen extends StatefulWidget {
   static const String id = 'search_screen';
@@ -82,94 +83,108 @@ class _InternScreenState extends State<InternScreen> {
                       Wrap(
                         children: [
                           for (int i = 0; i < browseGenres.length; i++)
-                            FractionallySizedBox(
-                              widthFactor: 1,
-                              child: Container(
-                                  decoration: BoxDecoration(
-                                    border: Border(
-                                      bottom: BorderSide(width: 1.0, color: Colors.black),   ),
-                                  ),
-                                  height: 200.0,
-                                  alignment: Alignment.topLeft,
-                                  child: Row(
-                                    children: [
-                                      Column(
-                                          children: <Widget>[
-                                            Text('${browseGenres[i]['work']}',   style: TextStyle(color: Colors.black,  fontSize: 20)),
-                                            Text('${browseGenres[i]['title']}',   style: TextStyle(color: Colors.black,  fontSize: 20)),
-                                            RichText(
-                                              text: TextSpan(
-                                                children: [
-                                                  TextSpan(text: ' '),
-                                                  WidgetSpan(
-                                                    child: Padding(
-                                                      padding: const
-                                                      EdgeInsets.symmetric(horizontal: 2.0),
-                                                      child: Icon(Icons.home,color:  Colors.black26,),
-                                                    ),
-                                                  ),
-                                                  TextSpan(text:
-                                                  '${browseGenres[i]['location']}'
-                                                      ,
-                                                      style:TextStyle(color:Colors.black)),
-                                                ],
-                                              ),
-                                            ),
-                                            RichText(
-                                              text: TextSpan(
-                                                children: [
-                                                  TextSpan(text: ' '),
-                                                  WidgetSpan(
-                                                    child: Padding(
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.white,
+
+                              ),
+                                onPressed:(){
+                                Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => const AboutScreen()),
+                                );
+                                },
+                              child: FractionallySizedBox(
+                                widthFactor: 1,
+                                child: Container(
+                                  padding: const EdgeInsets.fromLTRB(30, 0,0 , 0),
+
+                                    decoration: BoxDecoration(
+                                      border: Border(
+                                        bottom: BorderSide(width: 1.0, color: Colors.black),   ),
+                                    ),
+                                    height: 200.0,
+                                    alignment: Alignment.topLeft,
+                                    child: Row(
+                                      children: [
+                                        Column(
+                                            children: <Widget>[
+                                              Text('${browseGenres[i]['work']}',   style: TextStyle(color: Colors.black,  fontSize: 20)),
+                                              Text('${browseGenres[i]['title']}',   style: TextStyle(color: Colors.black,  fontSize: 20)),
+                                              RichText(
+                                                text: TextSpan(
+                                                  children: [
+                                                    TextSpan(text: ' '),
+                                                    WidgetSpan(
+                                                      child: Padding(
                                                         padding: const
                                                         EdgeInsets.symmetric(horizontal: 2.0),
-                                                        child: Icon(Icons.money,color:  Colors.black26,),
-
+                                                        child: Icon(Icons.home,color:  Colors.black26,),
+                                                      ),
                                                     ),
-                                                  ),
-                                                  TextSpan(text:
-                                                  '${browseGenres[i]['money']}/month',
-                                                      style:TextStyle(color:Colors.black)),
-                                                ],
-                                              ),
-                                            ),
-                                            RichText(
-                                              text: TextSpan(
-                                                children: [
-                                                  TextSpan(text: ' '),  WidgetSpan(
-                                                    child: Padding(
-                                                      padding: const
-                                                      EdgeInsets.symmetric(horizontal: 2.0),
-                                                      child: Icon(Icons.access_time,color:  Colors.black26,),
-                                                    ),
-                                                  ),
-                                                  TextSpan(text: 'Part Time allowed',
-                                                  style:TextStyle(color:Colors.black)
-                                                  ),   ],
-                                              ),
-                                            ),
-                                            Container(
-                                                margin:const EdgeInsets.fromLTRB(10, 20, 10,  5),
-                                                decoration: BoxDecoration(   color: Colors.black12,   borderRadius: BorderRadius.only(   topLeft: Radius.circular(16.0),   topRight: Radius.circular( 16.0),   bottomLeft: Radius.circular(16.0),   bottomRight: Radius.circular( 16.0)   )
+                                                    TextSpan(text:
+                                                    '${browseGenres[i]['location']}'
+                                                        ,
+                                                        style:TextStyle(color:Colors.black)),
+                                                  ],
                                                 ),
-                                                child: Text("Internship",style:  TextStyle(color: Color(0xff000000), fontSize: 15,)
-                                                )
+                                              ),
+                                              RichText(
+                                                text: TextSpan(
+                                                  children: [
+                                                    TextSpan(text: ' '),
+                                                    WidgetSpan(
+                                                      child: Padding(
+                                                          padding: const
+                                                          EdgeInsets.symmetric(horizontal: 2.0),
+                                                          child: Icon(Icons.money,color:  Colors.black26,),
+
+                                                      ),
+                                                    ),
+                                                    TextSpan(text:
+                                                    '${browseGenres[i]['money']}/month',
+                                                        style:TextStyle(color:Colors.black)),
+                                                  ],
+                                                ),
+                                              ),
+                                              RichText(
+                                                text: TextSpan(
+                                                  children: [
+                                                    TextSpan(text: ' '),  WidgetSpan(
+                                                      child: Padding(
+                                                        padding: const
+                                                        EdgeInsets.symmetric(horizontal: 2.0),
+                                                        child: Icon(Icons.access_time,color:  Colors.black26,),
+                                                      ),
+                                                    ),
+                                                    TextSpan(text: 'Part Time allowed',
+                                                    style:TextStyle(color:Colors.black)
+                                                    ),   ],
+                                                ),
+                                              ),
+                                              Container(
+                                                  margin:const EdgeInsets.fromLTRB(10, 20, 10,  5),
+                                                  decoration: BoxDecoration(   color: Colors.black12,   borderRadius: BorderRadius.only(   topLeft: Radius.circular(16.0),   topRight: Radius.circular( 16.0),   bottomLeft: Radius.circular(16.0),   bottomRight: Radius.circular( 16.0)   )
+                                                  ),
+                                                  child: Text("Internship",style:  TextStyle(color: Color(0xff000000), fontSize: 15,)
+                                                  )
+                                              ),
+                                            ]),
+                                        Padding(
+                                          padding: const EdgeInsets.fromLTRB(100, 0,0 , 0),
+                                          child: Transform.rotate(
+                                            angle: 0,
+                                            origin: const Offset(200, 50),
+                                            child: Image(
+                                              image: NetworkImage(
+                                                  '${browseGenres[i]['image']}'),   width: 70,
+                                              height: 70,
                                             ),
-                                          ]),
-                                      Padding(
-                                        padding: const EdgeInsets.fromLTRB(60, 0, 0, 0),
-                                        child: Transform.rotate(
-                                          angle: 0,
-                                          origin: const Offset(200, 50),
-                                          child: Image(
-                                            image: NetworkImage(
-                                                '${browseGenres[i]['image']}'),   width: 100,
-                                            height: 100,
                                           ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
+                                      ],
+                                    ),
+                                ),
                               ),
                             ),
                         ],

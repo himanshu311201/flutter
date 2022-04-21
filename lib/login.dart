@@ -59,15 +59,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding:
                   const EdgeInsets.symmetric(horizontal: 0, vertical: 10),
                   child: TextFormField(
-                    // validator: (value) {
-                    //   if (value == null || value.isEmpty) {
-                    //     return 'This field is required!';
-                    //   }
-                    //   if (value != 'Himanshu') {
-                    //     return 'Invalid Email Id';
-                    //   }
-                    //   return null;
-                    // },
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'This field is required!';
+                      }
+
+                      return null;
+                    },
                     controller: usernameController,
                     enableSuggestions: false,
                     autocorrect: false,
@@ -82,15 +80,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding:
                   const EdgeInsets.symmetric(horizontal: 0, vertical: 10),
                   child: TextFormField(
-                    // validator: (value) {
-                    //   if (value == null || value.isEmpty) {
-                    //     return 'This field is required!';
-                    //   }
-                    //   if (value != 'Himanshu@31') {
-                    //     return 'Invalid Password';
-                    //   }
-                    //   return null;
-                    // },
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'This field is required!';
+                      }
+                      return null;
+                    },
                     controller: passwordController,
                     obscureText: true,
                     enableSuggestions: false,
